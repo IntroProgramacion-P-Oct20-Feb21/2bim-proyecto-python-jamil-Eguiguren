@@ -7,7 +7,8 @@ Problemática:
 
 def crearFacebook():
     """
-        explicación de método
+        explicación de método, se pide a la persona ingrasar datos por teclado para poder
+        presentar un resumen en pantalla
     """
     print("Creando cuenta de Facebook")
     nombre = input("Ingrese su nombre: ")
@@ -23,7 +24,8 @@ def crearFacebook():
 
 def crearTwitter():
     """
-        explicación de método
+        explicación de método, se pide a la persona ingrasar datos por teclado para poder
+        presentar un resumen en pantalla
     """
     print("Creando cuenta de Twitter")
     nombres = input("Ingrese sus nombres: ")
@@ -39,7 +41,8 @@ def crearTwitter():
 
 def crearWhatsapp():
     """
-        explicación de método
+        explicación de método, se pide a la persona ingrasar datos por teclado para poder
+        presentar un resumen en pantalla
     """
     print("Creando cuenta de Whatsapp")
     nombres = input("Ingrese sus nombres: ")
@@ -54,7 +57,8 @@ def crearWhatsapp():
 
 def crearTelegram():
     """
-        explicación de método
+        explicación de método, se pide a la persona ingrasar datos por teclado para poder
+        presentar un resumen en pantalla
     """
     print("Creando cuenta de Telegram")
     nombres = input("Ingrese sus nombres: ")
@@ -68,7 +72,8 @@ def crearTelegram():
 
 def crearSignal():
     """
-        explicación de método
+        explicación de método, se pide a la persona ingrasar datos por teclado para poder
+        presentar un resumen en pantallao
     """
     print("Creando cuenta de Signal")
     nombres = input("Ingrese sus nombres: ")
@@ -83,7 +88,8 @@ def crearSignal():
 
 def crearInstagram():
     """
-        explicación de método
+        explicación de método, se pide a la persona ingrasar datos por teclado para poder
+        presentar un resumen en pantalla
     """
     print("Creando cuenta de Instagram")
     nombres = input("Ingrese sus nombres: ")
@@ -95,7 +101,8 @@ def crearInstagram():
 
 def crearFlickr():
     """
-        explicación de método
+        explicación de método, se pide a la persona ingrasar datos por teclado para poder
+        presentar un resumen en pantalla
     """
     print("Creando cuenta de Flickr")
     nombres = input("Ingrese sus nombres: ")
@@ -105,7 +112,8 @@ def crearFlickr():
     return cadena
 def obtenerMensaje(contador):
     """
-    explicación de método
+    explicación de método, se llama a un contador con el cual se podra presentar un mensaje en pantalla
+    el cual digo que tal esta la campaña
     """
     mensajeFinal = ["Campaña con poca afluencia", "Campaña moderada siga adelante", "Excelente campaña"]
     if(contador >= 1 and contador <= 5):
@@ -114,7 +122,7 @@ def obtenerMensaje(contador):
         if(contador >= 6 and contador <= 15):
             cadena = (mensajeFinal[1])
         else:
-            if(contador <= 16):
+            if(contador >= 16):
                 cadena = (mensajeFinal[2])
     return cadena
 
@@ -135,39 +143,43 @@ if __name__ == "__main__":
         if(opcion == 1):
             facebook = crearFacebook()
             print(facebook)
+            contador = contador + 1
         else:
             if(opcion == 2):
                 crearTwitter()
+                contador = contador + 1
             else:
                 if(opcion == 3):
                     Whatsapp = crearWhatsapp()
                     print(Whatsapp)
+                    contador = contador + 1
                 else:
                     if(opcion == 4):
                         crearTelegram()
+                        contador = contador + 1
                     else:
                         if(opcion == 5):
                             Signal = crearSignal()
                             print(Signal)
+                            contador = contador + 1
                         else:
                             if(opcion == 6):
                                 crearInstagram()
+                                contador = contador + 1
                             else:
                                 if(opcion == 7):
                                     Flickr = crearFlickr()
                                     print(Flickr)
+                                    contador = contador + 1
                                 else:
                                     print("Error, intete colocar los numero presentados")
                                     contador = contador - 1
 
         opcion2 = input( "Ingrese si para seguir creando cuentas: \n"\
         "Ingrese no para dejar de crear cuentas: \n" )
-        if(opcion2 == "si"):
-            contador = contador + 1
+        if(opcion2 == "no"):
+            bandera = False
+            presentacion = obtenerMensaje(contador)
+            print(presentacion)
         else:
-            if(opcion2 == "no"):
-                bandera = False
-                cadena = obtenerMensaje(contador)
-                print(cadena)
-            else:
-                print("Error, intete colocar los numero presentados")
+            print("Error, intete colocar los numero presentados")
